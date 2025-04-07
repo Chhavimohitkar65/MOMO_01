@@ -1,0 +1,133 @@
+{
+  "name": "momo",
+  "displayName": "Momo",
+  "description": "An autonomous coding agent powered by Gemini LLM, capable of creating/editing files, running commands, and more.",
+  "version": "0.0.1",
+  "publisher": "momo",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages",
+    "Machine Learning"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "momo.ask",
+        "title": "Momo: Ask a question",
+        "category": "Momo"
+      },
+      {
+        "command": "momo.agent",
+        "title": "Momo: Start agent mode",
+        "category": "Momo"
+      },
+      {
+        "command": "momo.applyChanges",
+        "title": "Momo: Apply suggested changes",
+        "category": "Momo"
+      },
+      {
+        "command": "momo.rejectChanges",
+        "title": "Momo: Reject suggested changes",
+        "category": "Momo"
+      },
+      {
+        "command": "momo.processEdits",
+        "title": "Momo: Process intelligent edits",
+        "category": "Momo"
+      },
+      {
+        "command": "momo.createFile",
+        "title": "Momo: Create File",
+        "category": "Momo"
+      },
+      {
+        "command": "momo.createFolder",
+        "title": "Momo: Create Folder",
+        "category": "Momo"
+      },
+      {
+        "command": "momo.deleteFile",
+        "title": "Momo: Delete File",
+        "category": "Momo"
+      },
+      {
+        "command": "momo.deleteFolder",
+        "title": "Momo: Delete Folder",
+        "category": "Momo"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "momo-sidebar",
+          "title": "Momo",
+          "icon": "assets/momo-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "momo-sidebar": [
+        {
+          "type": "webview",
+          "id": "momoSidebar",
+          "name": "Momo Assistant",
+          "icon": "assets/momo-icon.svg",
+          "contextualTitle": "Momo AI Assistant"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Momo",
+      "properties": {
+        "momo.apiKey": {
+          "type": "string",
+          "default": "AIzaSyB4hiLV6LGufxe_FQlH2TnNPZUVyEtTyVA",
+          "description": "API key for Gemini 2.0 Flash LLM"
+        },
+        "momo.defaultModel": {
+          "type": "string",
+          "default": "gemini-2.0-flash",
+          "enum": [
+            "gemini-2.0-flash"
+          ],
+          "enumDescriptions": [
+            "Gemini 2.0 Flash model for fast and efficient responses"
+          ],
+          "description": "Gemini model to use"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/diff": "^7.0.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.97.0",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.21.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.2.1",
+    "diff": "^5.1.0",
+    "marked": "^9.1.5"
+  }
+}
