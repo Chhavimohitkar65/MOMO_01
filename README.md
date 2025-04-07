@@ -1,84 +1,96 @@
 # Momo - AI Coding Assistant
 
-Momo is a VS Code extension that provides an AI coding assistant powered by Google's Gemini LLM. It helps you with coding tasks, answering questions, and performing actions in your codebase.
+Momo is a powerful VS Code extension that serves as an autonomous coding agent powered by the Gemini LLM. It provides intelligent assistance for coding tasks, file management, and more.
 
 ## Features
 
-- **Ask Mode**: Chat with Momo about your code, ask questions, and get help with coding tasks.
-- **Agent Mode**: Let Momo perform actions in your codebase, such as creating, reading, and editing files.
-- **File References**: Use `@file/folder` syntax to reference files and folders in your messages.
-- **File Creation**: Use `/filename` syntax to create new files.
-- **File Editing**: Use `#filename` syntax to edit existing files.
-- **Diff View**: See proposed changes in a diff view before applying them.
+- 🤖 **AI-Powered Assistance**: Powered by Gemini 2.0 Flash LLM for fast and efficient responses
+- 📝 **File Management**: Create, edit, and delete files and folders
+- 💡 **Intelligent Code Editing**: Process and apply intelligent code changes
+- 🎯 **Command Palette Integration**: Quick access to all Momo features through VS Code commands
+- 🎨 **Sidebar Interface**: Dedicated sidebar for easy interaction with the AI assistant
 
-## Getting Started
+## Installation
 
-1. Install the extension from the VS Code Marketplace.
-2. Set your Gemini API key in the extension settings.
-3. Open the Momo sidebar by clicking on the Momo icon in the activity bar.
-4. Choose between "Ask" and "Agent" modes.
-5. Start chatting with Momo!
-
-## Usage
-
-### Ask Mode
-
-In Ask mode, you can chat with Momo about your code and ask questions. You can reference files using the `@file/folder` syntax:
-
-```
-@src/index.js What does this file do?
-```
-
-Momo will read the file and provide information about it.
-
-### Agent Mode
-
-In Agent mode, Momo can perform actions in your codebase:
-
-1. **Reading Files**: Use `@file/folder` syntax to read files.
-   ```
-   @src/index.js
-   ```
-
-2. **Creating Files**: Use `/filename` syntax to create new files.
-   ```
-   /src/utils.js
-   
-   // Create a utility function
-   export function formatDate(date) {
-     return new Date(date).toLocaleDateString();
-   }
-   ```
-
-3. **Editing Files**: Use `#filename` syntax to edit existing files.
-   ```
-   #src/index.js
-   
-   // Add this import at the top
-   import { formatDate } from './utils';
-   ```
+1. Download the VSIX package from the releases section
+2. Open VS Code
+3. Go to the Extensions view (Ctrl+Shift+X)
+4. Click on the "..." menu and select "Install from VSIX"
+5. Choose the downloaded VSIX file
 
 ## Configuration
 
-- **API Key**: Set your Gemini API key in the extension settings.
-- **Default Model**: Choose between different Gemini models.
+Momo requires a Gemini API key to function. You can configure it in VS Code settings:
 
-## Requirements
+1. Open VS Code settings (Ctrl+,)
+2. Search for "Momo"
+3. Enter your Gemini API key in the `momo.apiKey` setting
 
-- VS Code 1.98.0 or higher
-- Gemini API key
+## Available Commands
 
-## Privacy
+- `Momo: Ask a question` - Ask Momo any coding-related question
+- `Momo: Start agent mode` - Activate autonomous agent mode
+- `Momo: Apply suggested changes` - Apply AI-suggested code changes
+- `Momo: Reject suggested changes` - Reject AI-suggested code changes
+- `Momo: Process intelligent edits` - Process AI-generated code edits
+- `Momo: Create File` - Create a new file
+- `Momo: Create Folder` - Create a new folder
+- `Momo: Delete File` - Delete a file
+- `Momo: Delete Folder` - Delete a folder
 
-Your code and conversations are sent to Google's Gemini API for processing. Please review Google's privacy policy for more information.
+## Development
+
+### Prerequisites
+
+- Node.js 20.x or later
+- VS Code 1.97.0 or later
+- TypeScript 5.7.3 or later
+
+### Setup
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Build the extension:
+   ```bash
+   npm run compile
+   ```
+
+### Development Scripts
+
+- `npm run compile` - Compile the TypeScript code
+- `npm run watch` - Watch for changes and compile automatically
+- `npm run lint` - Run ESLint
+- `npm test` - Run tests
+
+## Dependencies
+
+### Production Dependencies
+- @google/generative-ai: ^0.2.1
+- diff: ^5.1.0
+- marked: ^9.1.5
+
+### Development Dependencies
+- @types/diff: ^7.0.1
+- @types/mocha: ^10.0.10
+- @types/node: 20.x
+- @types/vscode: ^1.97.0
+- @typescript-eslint/eslint-plugin: ^8.25.0
+- @typescript-eslint/parser: ^8.25.0
+- @vscode/test-cli: ^0.0.10
+- @vscode/test-electron: ^2.4.1
+- eslint: ^9.21.0
+- typescript: ^5.7.3
 
 ## License
 
-This extension is licensed under the MIT License.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Feedback and Contributions
+## Contributing
 
-Feedback and contributions are welcome! Please open an issue or submit a pull request on the GitHub repository.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
