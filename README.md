@@ -1,7 +1,7 @@
 # Momo - AI Coding Assistant
 
 Momo is a powerful VS Code extension that serves as an autonomous coding agent powered by the Gemini LLM. It provides intelligent assistance for coding tasks, file management, and more.
-![Uploading image.png…]() 
+![image](https://github.com/user-attachments/assets/54b60ec6-03bc-4d47-8bfc-bd0bd5067300)
 
 
 ## Features
