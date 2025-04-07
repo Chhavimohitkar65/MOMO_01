@@ -38,6 +38,30 @@ Momo requires a Gemini API key to function. You can configure it in VS Code sett
 - `Momo: Delete File` - Delete a file
 - `Momo: Delete Folder` - Delete a folder
 
+## Command Syntax
+
+Momo supports several command prefixes for different operations:
+
+### File Operations
+- `@file/path/to/file` - Reference a file in your workspace
+- `@folder/path/to/folder` - Reference a folder in your workspace
+- `/newfile.js` - Create a new file
+- `#existingfile.js` - Edit an existing file
+
+### Code Execution
+- `@run path/to/file` - Execute a file with intelligent analysis
+  - Automatically detects file type and framework
+  - Sets up necessary environment
+  - Runs the file with appropriate command
+  - For web apps, opens the browser automatically
+  - Supported file types: .js, .ts, .py, .rb, .go, .java, .php, .rs, .cpp, .cc, .c, .sh, .ps1, .R, .jl
+
+### Code Fixing
+- `@fix path/to/file` - Analyze and fix issues in a file
+  - Identifies potential bugs
+  - Suggests improvements
+  - Applies fixes with your approval
+
 ## Development
 
 ### Prerequisites
@@ -88,10 +112,5 @@ Momo requires a Gemini API key to function. You can configure it in VS Code sett
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
 
 **Enjoy coding with Momo!**
